@@ -25,43 +25,41 @@ const FilterSection = ({
       />
 
       {/* Category */}
-    {/* Category */}
-<h1 className="mt-5 font-semibold text-lg md:text-xl">Category</h1>
+      {/* Category */}
+      <h1 className="mt-5 font-semibold text-lg md:text-xl">Category</h1>
 
-<div className="flex flex-col gap-2 mt-3">
+      <div className="flex flex-col gap-2 mt-3">
+        {/* ✅ ALL OPTION */}
+        <label className="flex gap-2 items-center cursor-pointer">
+          <input
+            type="radio"
+            name="category"
+            value=""
+            checked={category === ""}
+            onChange={() => setCategory("")}
+          />
+          <span className="uppercase">All</span>
+        </label>
 
-  {/* ✅ ALL OPTION */}
-  <label className="flex gap-2 items-center cursor-pointer">
-    <input
-      type="radio"
-      name="category"
-      value=""
-      checked={category === ""}
-      onChange={() => setCategory("")}
-    />
-    <span className="uppercase">All</span>
-  </label>
-
-  {/* EXISTING CATEGORIES */}
-  {categoryOnlyData
-    ?.filter((item) => typeof item === "string")
-    .map((item) => (
-      <label
-        key={item}
-        className="flex gap-2 items-center cursor-pointer"
-      >
-        <input
-          type="radio"
-          name="category"
-          value={item}
-          checked={category === item}
-          onChange={(e) => setCategory(e.target.value)}
-        />
-        <span className="uppercase">{item}</span>
-      </label>
-    ))}
-</div>
-
+        {/* EXISTING CATEGORIES */}
+        {categoryOnlyData
+          ?.filter((item) => typeof item === "string")
+          .map((item) => (
+            <label
+              key={item}
+              className="flex gap-2 items-center cursor-pointer"
+            >
+              <input
+                type="radio"
+                name="category"
+                value={item}
+                checked={category === item}
+                onChange={(e) => setCategory(e.target.value)}
+              />
+              <span className="uppercase">{item}</span>
+            </label>
+          ))}
+      </div>
 
       {/* Brand */}
       <h1 className="mt-5 font-semibold text-lg mb-3">Brand</h1>
@@ -76,7 +74,9 @@ const FilterSection = ({
         {brandOnlyData
           ?.filter((item) => typeof item === "string")
           .map((item) => (
-            <option value={item.toLowerCase()} key={item}> {/* ✅ FIX */}
+            <option value={item.toLowerCase()} key={item}>
+              {" "}
+              {/* ✅ FIX */}
               {item.toUpperCase()}
             </option>
           ))}
@@ -107,7 +107,8 @@ const FilterSection = ({
           setBrand("");
           setPriceRange([0, 5000]);
         }}
-        className="bg-red-500 text-white rounded-md px-3 py-2 mt-5 w-full">
+        className="bg-red-500 text-white rounded-md px-3 py-2 mt-5 w-full"
+      >
         Reset Filters
       </button>
     </div>

@@ -7,7 +7,6 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Category from "./Category";
 import { useNavigate } from "react-router-dom";
 
-/* ARROWS */
 const Arrow = ({ onClick, icon: Icon, position }) => (
   <button
     onClick={onClick}
@@ -23,7 +22,6 @@ const Arrow = ({ onClick, icon: Icon, position }) => (
 const Carousel = () => {
   const navigate = useNavigate();
   const { data, fetchAllProducts } = useData();
-  console.log("carousel", data);
 
   useEffect(() => {
     fetchAllProducts();

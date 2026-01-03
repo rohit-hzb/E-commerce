@@ -1,91 +1,4 @@
-// import {
-//   SignedIn,
-//   SignedOut,
-//   SignInButton,
-//   UserButton,
-// } from "@clerk/clerk-react";
-// import { MapPin } from "lucide-react";
-// import React from "react";
-// import { FaCaretDown } from "react-icons/fa";
-// import { IoCarOutline } from "react-icons/io5";
-// import { Link, NavLink } from "react-router-dom";
 
-// const Navbar = () => {
-//   const location = false;
-
-//   const navLinkStyle = ({ isActive }) =>
-//     `cursor-pointer ${
-//       isActive ? "border-b-2 border-red-500 transition-all" : "text-black"
-//     }`;
-
-//   return (
-//     <div className="bg-white py-3 shadow-2xl">
-//       <div className="max-w-6xl mx-auto flex justify-between items-center">
-//         {/* Logo + Location */}
-//         <div className="flex gap-7 items-center">
-//           <Link to="/" className="flex items-center">
-//             <h1 className="font-bold text-3xl">
-//               <span className="text-red-500 font-serif">E</span>Commerce
-//             </h1>
-//           </Link>
-
-//           <div className="flex gap-1 cursor-pointer text-gray-700 items-center">
-//             <MapPin className="text-red-500" />
-//             <span className="font-semibold">
-//               {location ? "Your Address" : "Add Address"}
-//             </span>
-//             <FaCaretDown />
-//           </div>
-//         </div>
-
-//         {/* Menu */}
-//         <nav>
-//           <ul className="flex gap-7 items-center text-xl font-semibold">
-//             <li>
-//               <NavLink to="/" className={navLinkStyle}>
-//                 Home
-//               </NavLink>
-//             </li>
-
-//             <li>
-//               <NavLink to="/products" className={navLinkStyle}>
-//                 Products
-//               </NavLink>
-//             </li>
-
-//             <li>
-//               <NavLink to="/about" className={navLinkStyle}>
-//                 About
-//               </NavLink>
-//             </li>
-
-//             <li>
-//               <NavLink to="/contact" className={navLinkStyle}>
-//                 Contact
-//               </NavLink>
-//             </li>
-//           </ul>
-//           <Link to="/cart" className="relative ml-7">
-//             <IoCarOutline className="h-7 w-7" />
-//             <span className="bg-red-500 px-2 rounded-full absolute top-3 right-3 text-white">
-//               0
-//             </span>
-//           </Link>
-//           <div>
-//             <SignedOut>
-//               <SignInButton className="bg-red-500 text-white px-3 py-1 rounded-md cursor-pointer" />
-//             </SignedOut>
-//             <SignedIn>
-//               <UserButton />
-//             </SignedIn>
-//           </div>
-//         </nav>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
 
 import {
   SignedIn,
@@ -102,7 +15,6 @@ import { useCart } from "../context/CartContext";
 
 const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
   const { cartItems } = useCart();
-  console.log(cartItems);
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinkStyle = ({ isActive }) =>
     `block py-2 ${
