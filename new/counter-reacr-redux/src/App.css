@@ -1,0 +1,61 @@
+/* Main container spacing */
+.control-row {
+  margin-top: 25px;
+}
+
+/* Buttons common style */
+button.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px 18px;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Hover animation */
+button.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Click effect */
+button.btn:active {
+  transform: scale(0.95);
+}
+
+/* Input styling */
+.control-row input {
+  width: 180px;
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+/* Input placeholder color */
+.control-row input::placeholder {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+/* Center spacing for top buttons */
+.d-grid {
+  margin-top: 20px;
+}
+
+/* Responsive fix */
+@media (max-width: 576px) {
+  .d-sm-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button.btn {
+    width: 100%;
+  }
+
+  .control-row input {
+    width: 100%;
+  }
+}
+
